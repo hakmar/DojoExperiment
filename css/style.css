@@ -1,0 +1,11 @@
+.my-dropdown-menu {
+    position: absolute;
+    /* margin-top: -11px; */
+    background: white;
+    border: #CCC 1px solid;
+    width: auto;
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 1;
+}

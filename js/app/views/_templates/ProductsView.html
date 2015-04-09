@@ -1,0 +1,38 @@
+<div data-dojo-attach-event="onclick:hideDropdownList">
+    <div class="container" style="height: 500px">
+        <div class="row">
+            <div class=" col-sm-6">
+                <button type="button" href="#" class="btn" style="outline: none" data-dojo-attach-event="onclick: showDropdownList">
+                    <span>Select Product</span>
+                    <span class="caret"></span>
+                </button>
+
+                <div class="my-dropdown-menu hidden" data-dojo-attach-point="productDropDown">
+                    <table class="table table-condensed">
+                        <tbody data-dojo-attach-point="productDropdownContainer"></tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <table class="table table-condensed">
+                        <colgroup>
+                            <col style="width: 30%" />
+                            <col style="width: 30%" />
+                            <col style="width: 30%" />
+                            <col style="width: 10%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <td>Produkt</td>
+                                <td>Antal</td>
+                                <td>Pris</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody data-dojo-attach-point="productListContainer"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

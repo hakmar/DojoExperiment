@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DojoExperiment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dijit/themes/claro/claro.css" rel="stylesheet" />
+    <script type="text/javascript">
+        var contextRoot = "/";
+        var dojoConfig = {
+            async: true,
+            packages: [
+                {
+                    name: "app",
+                    location: "/js/app"
+                }
+            ]
+        };
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js"></script>
+
+</head>
+<body>
+    <div id="viewContainer"></div>
+    <script>
+        require(["app"]);
+    </script>
+</body>
+</html>
