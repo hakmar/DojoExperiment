@@ -1,9 +1,8 @@
 define(['dojo/Evented', 'dojo/_base/declare', 'dijit/_WidgetBase', 'dijit/_TemplatedMixin',
         'dojo/text!./_templates/ProductDropdownRow.html'],
-        // , 'dijit/form/CheckBox'],
     function (Evented, declare, _WidgetBase, _TemplatedMixin, template) {
 
-        var ProductRow = declare([Evented, _WidgetBase, _TemplatedMixin], {
+        var ProductRow = declare([_WidgetBase, _TemplatedMixin, Evented], {
 
             templateString: template,
 
@@ -15,10 +14,8 @@ define(['dojo/Evented', 'dojo/_base/declare', 'dijit/_WidgetBase', 'dijit/_Templ
                 }
             },
 
-            onProductSelection: function() {},
-
             performSelection: function (e) {
-                this.onProductSelection(e.target.checked, this.product);
+                this.emit('productSelection', e.target.checked, this.product);
             }
 
         });

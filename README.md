@@ -1,2 +1,1 @@
-# DojoExperiment
-Trying out some Dojo
+First attempt to use Dojo
