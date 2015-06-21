@@ -33,23 +33,20 @@ define(['dojo/Evented', 'dojo/_base/declare', 'dijit/_WidgetBase', 'dijit/_Templ
             hideDropdownList: function (e) {
                 this.productDropDown.classList.add('hidden');
                 this.handleDropdownList();
-                win.body().removeEventListener("click", this.callback, false);
-                delete this.callback;
             },
 
             showDropdownList: function (e) {
                 this.productDropDown.classList.remove('hidden');
                 this.handleDropdownList();
 
-                if (!this.callback) {
-                    this.productDropDown.addEventListener("click", function(e){
-                        e.stopPropagation();
-                    });
-
+                on(this.productDropDown, "click", function(e) {
                     e.stopPropagation();
-                    this.callback = this.hideDropdownList.bind(this);
-                    win.body().addEventListener("click", this.callback, false);
-                }
+                });
+
+                e.stopPropagation();
+                on.once(win.body(), "click", dojo.hitch(this, function() {
+                    this.hideDropdownList();
+                }));
             },
 
             remove: function (product) {
